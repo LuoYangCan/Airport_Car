@@ -9,10 +9,15 @@
 /* Begin PBXBuildFile section */
 		685201AD1EC4466100E03DCF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 685201AC1EC4466100E03DCF /* main.m */; };
 		685201B01EC4466100E03DCF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 685201AF1EC4466100E03DCF /* AppDelegate.m */; };
-		685201B31EC4466100E03DCF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 685201B21EC4466100E03DCF /* ViewController.m */; };
 		685201B61EC4466100E03DCF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 685201B41EC4466100E03DCF /* Main.storyboard */; };
 		685201B81EC4466100E03DCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 685201B71EC4466100E03DCF /* Assets.xcassets */; };
 		685201BB1EC4466100E03DCF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 685201B91EC4466100E03DCF /* LaunchScreen.storyboard */; };
+		685201DA1EC4484900E03DCF /* ACBaseTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 685201D91EC4484900E03DCF /* ACBaseTabbarController.m */; };
+		685201DE1EC4488800E03DCF /* ACHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 685201DD1EC4488800E03DCF /* ACHelper.m */; };
+		686FF4431EC6DDA70057597B /* ACBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 686FF4421EC6DDA70057597B /* ACBaseViewController.m */; };
+		686FF4461EC6DDD00057597B /* ACBluetoothViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 686FF4451EC6DDD00057597B /* ACBluetoothViewController.m */; };
+		686FF4491EC6DDDE0057597B /* ACUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 686FF4481EC6DDDE0057597B /* ACUserViewController.m */; };
+		686FF44C1EC6E33F0057597B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 686FF44B1EC6E33F0057597B /* ViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,12 +25,22 @@
 		685201AC1EC4466100E03DCF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		685201AE1EC4466100E03DCF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		685201AF1EC4466100E03DCF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		685201B11EC4466100E03DCF /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		685201B21EC4466100E03DCF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		685201B51EC4466100E03DCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		685201B71EC4466100E03DCF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		685201BA1EC4466100E03DCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		685201BC1EC4466100E03DCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		685201D81EC4484900E03DCF /* ACBaseTabbarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACBaseTabbarController.h; sourceTree = "<group>"; };
+		685201D91EC4484900E03DCF /* ACBaseTabbarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACBaseTabbarController.m; sourceTree = "<group>"; };
+		685201DC1EC4488800E03DCF /* ACHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACHelper.h; sourceTree = "<group>"; };
+		685201DD1EC4488800E03DCF /* ACHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACHelper.m; sourceTree = "<group>"; };
+		686FF4411EC6DDA70057597B /* ACBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACBaseViewController.h; sourceTree = "<group>"; };
+		686FF4421EC6DDA70057597B /* ACBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACBaseViewController.m; sourceTree = "<group>"; };
+		686FF4441EC6DDD00057597B /* ACBluetoothViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACBluetoothViewController.h; sourceTree = "<group>"; };
+		686FF4451EC6DDD00057597B /* ACBluetoothViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACBluetoothViewController.m; sourceTree = "<group>"; };
+		686FF4471EC6DDDE0057597B /* ACUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACUserViewController.h; sourceTree = "<group>"; };
+		686FF4481EC6DDDE0057597B /* ACUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACUserViewController.m; sourceTree = "<group>"; };
+		686FF44A1EC6E33F0057597B /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		686FF44B1EC6E33F0057597B /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +57,10 @@
 		6852019F1EC4466100E03DCF = {
 			isa = PBXGroup;
 			children = (
+				685201C91EC447D600E03DCF /* Base */,
+				685201C21EC4469000E03DCF /* Controller */,
+				685201C31EC4469000E03DCF /* Model */,
+				685201C41EC4469000E03DCF /* View */,
 				685201AA1EC4466100E03DCF /* 机场智能小车 */,
 				685201A91EC4466100E03DCF /* Products */,
 			);
@@ -58,10 +77,10 @@
 		685201AA1EC4466100E03DCF /* 机场智能小车 */ = {
 			isa = PBXGroup;
 			children = (
+				686FF44A1EC6E33F0057597B /* ViewController.h */,
+				686FF44B1EC6E33F0057597B /* ViewController.m */,
 				685201AE1EC4466100E03DCF /* AppDelegate.h */,
 				685201AF1EC4466100E03DCF /* AppDelegate.m */,
-				685201B11EC4466100E03DCF /* ViewController.h */,
-				685201B21EC4466100E03DCF /* ViewController.m */,
 				685201B41EC4466100E03DCF /* Main.storyboard */,
 				685201B71EC4466100E03DCF /* Assets.xcassets */,
 				685201B91EC4466100E03DCF /* LaunchScreen.storyboard */,
@@ -77,6 +96,92 @@
 				685201AC1EC4466100E03DCF /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		685201C21EC4469000E03DCF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				685201C61EC4479100E03DCF /* ACBluetoothViewController */,
+				685201C71EC4479100E03DCF /* ACUserViewController */,
+				685201C51EC4479100E03DCF /* ACBaseViewController */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		685201C31EC4469000E03DCF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		685201C41EC4469000E03DCF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				685201C81EC447B100E03DCF /* ACtableViewCell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		685201C51EC4479100E03DCF /* ACBaseViewController */ = {
+			isa = PBXGroup;
+			children = (
+				686FF4411EC6DDA70057597B /* ACBaseViewController.h */,
+				686FF4421EC6DDA70057597B /* ACBaseViewController.m */,
+			);
+			path = ACBaseViewController;
+			sourceTree = "<group>";
+		};
+		685201C61EC4479100E03DCF /* ACBluetoothViewController */ = {
+			isa = PBXGroup;
+			children = (
+				686FF4441EC6DDD00057597B /* ACBluetoothViewController.h */,
+				686FF4451EC6DDD00057597B /* ACBluetoothViewController.m */,
+			);
+			path = ACBluetoothViewController;
+			sourceTree = "<group>";
+		};
+		685201C71EC4479100E03DCF /* ACUserViewController */ = {
+			isa = PBXGroup;
+			children = (
+				686FF4471EC6DDDE0057597B /* ACUserViewController.h */,
+				686FF4481EC6DDDE0057597B /* ACUserViewController.m */,
+			);
+			path = ACUserViewController;
+			sourceTree = "<group>";
+		};
+		685201C81EC447B100E03DCF /* ACtableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ACtableViewCell;
+			sourceTree = "<group>";
+		};
+		685201C91EC447D600E03DCF /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				685201DB1EC4487300E03DCF /* ACHelper */,
+				685201CE1EC4480900E03DCF /* ACBaseTabbarController */,
+			);
+			path = Base;
+			sourceTree = SOURCE_ROOT;
+		};
+		685201CE1EC4480900E03DCF /* ACBaseTabbarController */ = {
+			isa = PBXGroup;
+			children = (
+				685201D81EC4484900E03DCF /* ACBaseTabbarController.h */,
+				685201D91EC4484900E03DCF /* ACBaseTabbarController.m */,
+			);
+			path = ACBaseTabbarController;
+			sourceTree = "<group>";
+		};
+		685201DB1EC4487300E03DCF /* ACHelper */ = {
+			isa = PBXGroup;
+			children = (
+				685201DC1EC4488800E03DCF /* ACHelper.h */,
+				685201DD1EC4488800E03DCF /* ACHelper.m */,
+			);
+			path = ACHelper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,9 +256,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				685201B31EC4466100E03DCF /* ViewController.m in Sources */,
+				685201DE1EC4488800E03DCF /* ACHelper.m in Sources */,
+				686FF4461EC6DDD00057597B /* ACBluetoothViewController.m in Sources */,
+				686FF44C1EC6E33F0057597B /* ViewController.m in Sources */,
+				686FF4491EC6DDDE0057597B /* ACUserViewController.m in Sources */,
 				685201B01EC4466100E03DCF /* AppDelegate.m in Sources */,
 				685201AD1EC4466100E03DCF /* main.m in Sources */,
+				685201DA1EC4484900E03DCF /* ACBaseTabbarController.m in Sources */,
+				686FF4431EC6DDA70057597B /* ACBaseViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,7 +384,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = DQ9GH826P4;
+				GCC_VERSION = "";
 				INFOPLIST_FILE = "机场智能小车/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Young-San.------";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -286,7 +398,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = DQ9GH826P4;
+				GCC_VERSION = "";
 				INFOPLIST_FILE = "机场智能小车/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Young-San.------";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -312,6 +426,7 @@
 				685201C11EC4466100E03DCF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
