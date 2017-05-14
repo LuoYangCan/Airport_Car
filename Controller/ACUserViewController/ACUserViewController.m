@@ -7,16 +7,15 @@
 //
 
 #import "ACUserViewController.h"
-
+#import "ACHelper.h"
 @interface ACUserViewController ()
-
 @end
 
 @implementation ACUserViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor orangeColor];
+    [self initUI];
     // Do any additional setup after loading the view.
 }
 
@@ -24,7 +23,10 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+-(void)initUI{
+    self.view.backgroundColor = kBackgroundGray;
+    
+}
 /*
 #pragma mark - Navigation
 

@@ -9,6 +9,7 @@
 #import "ACBaseViewController.h"
 #import "ACHelper.h"
 #import <QuartzCore/QuartzCore.h>
+#import "ACBluetoothViewController.h"
 #define leftitle kscreenWidth /4 - 25
 #define righttitle kscreenWidth /2 + 45
 #define leftInfo kscreenWidth /4 - 15
@@ -110,7 +111,13 @@
     car.layer.shadowOpacity = 0.35f;
     car.layer.shadowRadius = 4.f;
     car.layer.shadowOffset = CGSizeMake(0,0);
+    [car addTarget:self action:@selector(pushtoBluetooth) forControlEvents:UIControlEventTouchUpInside];
     [detailView addSubview:car];
+}
+
+-(void)pushtoBluetooth{
+    ACBluetoothViewController *btVc = [[ACBluetoothViewController alloc]init];
+    [self presentViewController:btVc animated:YES completion:nil];
 }
 
 -(UILabel *)getLabelWitchisBold:(BOOL)Bold withText:(NSString *)text andFont:(CGFloat)Font andFramex:(CGFloat )x Framey:(CGFloat )y {

@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Controller/ACBaseViewController/ACBaseViewController.m"
-            timestampString = "516394153.800923"
+            timestampString = "516426174.68735"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
             landmarkName = "-initUI"
             landmarkType = "7">
          </BreakpointContent>

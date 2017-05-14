@@ -5,7 +5,7 @@
 //  Created by 孤岛 on 2017/5/11.
 //  Copyright © 2017年 孤岛. All rights reserved.
 //
-
+#import "UIColor+Additions.h"
 #import <Foundation/Foundation.h>
 @interface ACHelper : NSObject
 
@@ -14,3 +14,6 @@
 
 
 #define kscreenHeight [UIScreen mainScreen].bounds.size.height
+
+
+#define kBackgroundGray [UIColor colorWithRGBHex:0xf7f7f7]

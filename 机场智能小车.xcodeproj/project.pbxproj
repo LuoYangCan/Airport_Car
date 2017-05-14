@@ -18,6 +18,7 @@
 		686FF4461EC6DDD00057597B /* ACBluetoothViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 686FF4451EC6DDD00057597B /* ACBluetoothViewController.m */; };
 		686FF4491EC6DDDE0057597B /* ACUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 686FF4481EC6DDDE0057597B /* ACUserViewController.m */; };
 		686FF44C1EC6E33F0057597B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 686FF44B1EC6E33F0057597B /* ViewController.m */; };
+		686FF49C1EC806210057597B /* UIColor+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 686FF49B1EC806210057597B /* UIColor+Additions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,8 @@
 		686FF4481EC6DDDE0057597B /* ACUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACUserViewController.m; sourceTree = "<group>"; };
 		686FF44A1EC6E33F0057597B /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		686FF44B1EC6E33F0057597B /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		686FF49A1EC806210057597B /* UIColor+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Additions.h"; sourceTree = "<group>"; };
+		686FF49B1EC806210057597B /* UIColor+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Additions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +97,8 @@
 			isa = PBXGroup;
 			children = (
 				685201AC1EC4466100E03DCF /* main.m */,
+				686FF49A1EC806210057597B /* UIColor+Additions.h */,
+				686FF49B1EC806210057597B /* UIColor+Additions.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -258,6 +263,7 @@
 			files = (
 				685201DE1EC4488800E03DCF /* ACHelper.m in Sources */,
 				686FF4461EC6DDD00057597B /* ACBluetoothViewController.m in Sources */,
+				686FF49C1EC806210057597B /* UIColor+Additions.m in Sources */,
 				686FF44C1EC6E33F0057597B /* ViewController.m in Sources */,
 				686FF4491EC6DDDE0057597B /* ACUserViewController.m in Sources */,
 				685201B01EC4466100E03DCF /* AppDelegate.m in Sources */,

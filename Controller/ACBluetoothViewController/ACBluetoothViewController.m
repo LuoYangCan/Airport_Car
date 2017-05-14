@@ -7,7 +7,7 @@
 //
 
 #import "ACBluetoothViewController.h"
-
+#import "ACHelper.h"
 @interface ACBluetoothViewController ()
 
 @end
@@ -16,12 +16,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self initUI];
     // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+-(void)initUI{
+    UIImage *paperplane = [UIImage imageNamed:@"Paper Plane-64"];
+    UIImageView *Image = [[UIImageView alloc]initWithFrame:CGRectMake(kscreenWidth /2 - 40, 85, 80, 80)];
+    [Image setImage:paperplane];
+    [self.view addSubview:Image];
 }
 
 /*
