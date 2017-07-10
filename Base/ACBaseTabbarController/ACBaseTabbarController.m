@@ -17,6 +17,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //设置tabbar颜色
+    [[UITabBar appearance]setBarTintColor:[UIColor colorWithRed:232/255.0 green:136/255.0 blue:145/255.0 alpha:1]];
+    //设置tabbar不透明
+    [UITabBar appearance].translucent = YES;
+
     [self initTabbar];
     // Do any additional setup after loading the view.
 }

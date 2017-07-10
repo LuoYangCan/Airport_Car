@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3CBBD84F2EBC94721C002753 /* libPods-机场智能小车.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E72A1CC4474E8669E4A53863 /* libPods-机场智能小车.a */; };
 		685201AD1EC4466100E03DCF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 685201AC1EC4466100E03DCF /* main.m */; };
 		685201B01EC4466100E03DCF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 685201AF1EC4466100E03DCF /* AppDelegate.m */; };
 		685201B61EC4466100E03DCF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 685201B41EC4466100E03DCF /* Main.storyboard */; };
@@ -19,9 +20,11 @@
 		686FF4491EC6DDDE0057597B /* ACUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 686FF4481EC6DDDE0057597B /* ACUserViewController.m */; };
 		686FF44C1EC6E33F0057597B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 686FF44B1EC6E33F0057597B /* ViewController.m */; };
 		686FF49C1EC806210057597B /* UIColor+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 686FF49B1EC806210057597B /* UIColor+Additions.m */; };
+		68C456271F136F0000DBE96D /* ACNetworkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C456261F136F0000DBE96D /* ACNetworkHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2CD4CCD99DF87D5A42FC3778 /* Pods-机场智能小车.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-机场智能小车.release.xcconfig"; path = "Pods/Target Support Files/Pods-机场智能小车/Pods-机场智能小车.release.xcconfig"; sourceTree = "<group>"; };
 		685201A81EC4466100E03DCF /* 机场智能小车.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "机场智能小车.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		685201AC1EC4466100E03DCF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		685201AE1EC4466100E03DCF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -44,6 +47,10 @@
 		686FF44B1EC6E33F0057597B /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		686FF49A1EC806210057597B /* UIColor+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Additions.h"; sourceTree = "<group>"; };
 		686FF49B1EC806210057597B /* UIColor+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Additions.m"; sourceTree = "<group>"; };
+		68C456251F136F0000DBE96D /* ACNetworkHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACNetworkHelper.h; sourceTree = "<group>"; };
+		68C456261F136F0000DBE96D /* ACNetworkHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACNetworkHelper.m; sourceTree = "<group>"; };
+		A386B048B083D9FF6E454DEF /* Pods-机场智能小车.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-机场智能小车.debug.xcconfig"; path = "Pods/Target Support Files/Pods-机场智能小车/Pods-机场智能小车.debug.xcconfig"; sourceTree = "<group>"; };
+		E72A1CC4474E8669E4A53863 /* libPods-机场智能小车.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-机场智能小车.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,12 +58,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CBBD84F2EBC94721C002753 /* libPods-机场智能小车.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		569E54864CEBB16DC8B000DC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A386B048B083D9FF6E454DEF /* Pods-机场智能小车.debug.xcconfig */,
+				2CD4CCD99DF87D5A42FC3778 /* Pods-机场智能小车.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		6852019F1EC4466100E03DCF = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +83,8 @@
 				685201C41EC4469000E03DCF /* View */,
 				685201AA1EC4466100E03DCF /* 机场智能小车 */,
 				685201A91EC4466100E03DCF /* Products */,
+				569E54864CEBB16DC8B000DC /* Pods */,
+				B1B80F8A3065DDC3683635B4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -185,8 +204,26 @@
 			children = (
 				685201DC1EC4488800E03DCF /* ACHelper.h */,
 				685201DD1EC4488800E03DCF /* ACHelper.m */,
+				68C456241F136ECE00DBE96D /* Network */,
 			);
 			path = ACHelper;
+			sourceTree = "<group>";
+		};
+		68C456241F136ECE00DBE96D /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				68C456251F136F0000DBE96D /* ACNetworkHelper.h */,
+				68C456261F136F0000DBE96D /* ACNetworkHelper.m */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		B1B80F8A3065DDC3683635B4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E72A1CC4474E8669E4A53863 /* libPods-机场智能小车.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,9 +233,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 685201BF1EC4466100E03DCF /* Build configuration list for PBXNativeTarget "机场智能小车" */;
 			buildPhases = (
+				EA9428B3AD45E5A0D9F4F8AD /* [CP] Check Pods Manifest.lock */,
 				685201A41EC4466100E03DCF /* Sources */,
 				685201A51EC4466100E03DCF /* Frameworks */,
 				685201A61EC4466100E03DCF /* Resources */,
+				44AEBAA9367A4E238E95D33F /* [CP] Embed Pods Frameworks */,
+				2731F65F3C3D3FBBEDC096E3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -256,6 +296,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2731F65F3C3D3FBBEDC096E3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-机场智能小车/Pods-机场智能小车-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		44AEBAA9367A4E238E95D33F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-机场智能小车/Pods-机场智能小车-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EA9428B3AD45E5A0D9F4F8AD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		685201A41EC4466100E03DCF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -267,6 +355,7 @@
 				686FF44C1EC6E33F0057597B /* ViewController.m in Sources */,
 				686FF4491EC6DDDE0057597B /* ACUserViewController.m in Sources */,
 				685201B01EC4466100E03DCF /* AppDelegate.m in Sources */,
+				68C456271F136F0000DBE96D /* ACNetworkHelper.m in Sources */,
 				685201AD1EC4466100E03DCF /* main.m in Sources */,
 				685201DA1EC4484900E03DCF /* ACBaseTabbarController.m in Sources */,
 				686FF4431EC6DDA70057597B /* ACBaseViewController.m in Sources */,
@@ -387,6 +476,7 @@
 		};
 		685201C01EC4466100E03DCF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A386B048B083D9FF6E454DEF /* Pods-机场智能小车.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = DQ9GH826P4;
@@ -401,6 +491,7 @@
 		};
 		685201C11EC4466100E03DCF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CD4CCD99DF87D5A42FC3778 /* Pods-机场智能小车.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = DQ9GH826P4;

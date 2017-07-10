@@ -5,25 +5,28 @@
 //  Created by 孤岛 on 2017/5/13.
 //  Copyright © 2017年 孤岛. All rights reserved.
 //
-
+#import "ACNetworkHelper.h"
 #import "ACBaseViewController.h"
 #import "ACHelper.h"
 #import <QuartzCore/QuartzCore.h>
 #import "ACBluetoothViewController.h"
+#import <CoreLocation/CoreLocation.h>
 #define leftitle kscreenWidth /4 - 25
 #define righttitle kscreenWidth /2 + 45
 #define leftInfo kscreenWidth /4 - 15
 #define rightInfo kscreenWidth /2 + 55
 
-@interface ACBaseViewController ()
-
+@interface ACBaseViewController ()<CLLocationManagerDelegate,UIScrollViewDelegate>
+@property(nonatomic,strong) CLLocationManager *Loc ;
+@property(nonatomic,strong) UILabel *todayweather;
+@property(nonatomic,strong) UIScrollView *backgroundScro;
 @end
 
 @implementation ACBaseViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self initUI];
+    [self setup];
     // Do any additional setup after loading the view.
 }
 
@@ -31,27 +34,50 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+-(void)setup{
+    [self getlocation];
+    [self initScroView];
+    [self initUI];
+}
+
+/**
+ 初始化滚动界面
+ */
+-(void)initScroView{
+    self.backgroundScro = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, kscreenWidth, kscreenHeight)];
+    self.backgroundScro.backgroundColor = [UIColor colorWithRed:232/255.0 green:136/255.0 blue:145/255.0 alpha:1];
+    self.backgroundScro.delegate = self;
+    self.backgroundScro.contentSize = CGSizeMake(kscreenWidth, kscreenHeight+10);
+    self.backgroundScro.bounces = YES;
+    self.backgroundScro.scrollEnabled = YES;
+    self.backgroundScro.showsVerticalScrollIndicator = NO;
+    self.backgroundScro.showsHorizontalScrollIndicator = NO;
+    self.backgroundScro.contentOffset = CGPointMake(0, 0);
+    [self.view addSubview:self.backgroundScro];
+}
 -(void)initUI{
     self.edgesForExtendedLayout = UIRectEdgeNone;
     self.automaticallyAdjustsScrollViewInsets = NO;
-    self.view.backgroundColor = [UIColor whiteColor];
+    //设置Item颜色
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:232/255.0 green:136/255.0 blue:145/255.0 alpha:1];
+
     //设置起飞地目的地
     UILabel *DepartureCity = [self getLabelWitchisBold:YES withText:@"北京" andFont:26 andFramex:(kscreenWidth/4) Framey:45];
-    [self.view addSubview:DepartureCity];
+    [self.backgroundScro addSubview:DepartureCity];
     UIImage *img = [UIImage imageNamed:@"Airplane Take Off Filled-50"];
     UIImageView *ImgView = [[UIImageView alloc]initWithImage:img];
     ImgView.center = CGPointMake(self.view.center.x, 46);
-    [self.view addSubview:ImgView];
+    [self.backgroundScro addSubview:ImgView];
     UILabel *DestinationCity = [self getLabelWitchisBold:YES withText:@"重庆" andFont:26 andFramex:(kscreenWidth * 3/4) Framey:45];
-    [self.view addSubview:DestinationCity];
+    [self.backgroundScro addSubview:DestinationCity];
     //设置机票详细页面
     UIView *detailView = [[UIView alloc]initWithFrame:CGRectMake(10, 100, kscreenWidth -20, kscreenHeight*2/3)];
-    detailView.backgroundColor = [UIColor whiteColor];
+    detailView.backgroundColor = [UIColor colorWithRed:244/255.0 green:220/255.0 blue:219/255.0 alpha:1];
     detailView.layer.shadowColor = [UIColor blackColor].CGColor;
     detailView.layer.shadowOpacity = 0.5f;
     detailView.layer.shadowRadius = 4.f;
     detailView.layer.shadowOffset = CGSizeMake(0,0);
-    [self.view addSubview:detailView];
+    [self.backgroundScro addSubview:detailView];
     UILabel *airlines = [self getLabelWitchisBold:YES withText:@"XX航空公司" andFont:20 andFramex:(kscreenWidth / 4 -10) Framey:30];
     [detailView addSubview:airlines];
     UILabel *passager = [self getLabelWitchisBold:NO withText:@"乘客信息" andFont:14 andFramex:(leftitle) Framey:80];
@@ -102,11 +128,24 @@
     UILabel *seatD = [self getLabelWitchisBold:YES withText:@"7排7座 " andFont:21 andFramex:leftInfo Framey:380];
     [detailView addSubview:seatD];
     
+    UILabel *weather = [self getLabelWitchisBold:NO withText:@"天气" andFont:14 andFramex:righttitle Framey:350];
+    [weather setTextColor:[UIColor grayColor]];
+    [detailView addSubview:weather];
+    
+    _todayweather =[self getLabelWitchisBold:YES withText:@"00" andFont:38 andFramex:rightInfo -25 Framey:380];
+    [detailView addSubview:_todayweather];
+    
+    UILabel *symbol = [self getLabelWitchisBold:YES withText:@"°C  " andFont:18 andFramex:rightInfo + 10 Framey:378];
+    [detailView addSubview:symbol];
+
+    
+    
+    
     //智能小车按钮
     UIButton *car = [[UIButton alloc]initWithFrame:CGRectMake(rightInfo + 5, 10, 80, 40)];
     [car setTitle:@"智能小车" forState:UIControlStateNormal];
     car.titleLabel.font = [UIFont systemFontOfSize:17];
-    car.backgroundColor = [UIColor blueColor];
+    car.backgroundColor = [UIColor colorWithRed:216/255.0 green:87/255.0 blue:113/255.0 alpha:1];
     car.layer.shadowColor = [UIColor blackColor].CGColor;
     car.layer.shadowOpacity = 0.35f;
     car.layer.shadowRadius = 4.f;
@@ -115,6 +154,48 @@
     [detailView addSubview:car];
 }
 
+
+
+/**
+ 获取定位
+ */
+-(void)getlocation{
+    
+    if ([CLLocationManager locationServicesEnabled]) {
+        _Loc = [[CLLocationManager alloc]init];
+        _Loc.delegate = self;
+        //开始定位
+        [_Loc startUpdatingLocation];
+    }else{
+        NSLog(@"并不能定位");
+    }
+}
+
+/**
+ 获取天气情况
+ */
+-(void)getWeatherDatawithCity:(NSString *)City{
+    
+    NSString *URL = [NSString stringWithFormat:@"now?city=%@&key=%@",City,myKey];
+    NSString *URLText = [URL stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+    [[ACNetworkHelper sharedManager]GET:URLText parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSDictionary *dic = responseObject;
+        NSArray *foreCast = [dic objectForKey:@"HeWeather5"];
+        [foreCast enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            NSDictionary *today = obj;
+            NSDictionary *nowDic = today[@"now"];
+            _todayweather.text  = nowDic[@"tmp"];
+            
+        }];
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"获取失败");
+    }];
+}
+
+/**
+ 切换页面
+ */
 -(void)pushtoBluetooth{
     ACBluetoothViewController *btVc = [[ACBluetoothViewController alloc]init];
     [self presentViewController:btVc animated:YES completion:nil];
@@ -142,6 +223,39 @@
     }
     return baseLabel;
 }
+
+
+
+
+#pragma mark -  CLLocationManagerDelegate
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations{
+    CLLocation *currentLocation = [locations lastObject];
+    CLGeocoder *geocoder = [[CLGeocoder alloc]init];
+    [geocoder reverseGeocodeLocation:currentLocation completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
+        if (placemarks.count > 0) {
+            CLPlacemark *placemark = [placemarks objectAtIndex:0];
+            NSString *city = placemark.locality;
+            [self getWeatherDatawithCity:city];
+            if (!city) {
+                city = placemark.administrativeArea;
+                
+            }
+        }else if (error == nil && [placemarks count] == 0){
+            
+            NSLog(@"No results were returned.");
+            
+        }else if (error != nil){
+            
+            NSLog(@"An error occurred = %@", error);
+            
+        }
+    }];
+    [manager stopUpdatingLocation];
+}
+-(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error{
+    NSLog(@"%@失败了 原因是：\n",error);
+}
+
 /*
 #pragma mark - Navigation
 

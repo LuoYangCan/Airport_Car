@@ -25,7 +25,8 @@
 }
 -(void)initUI{
     self.view.backgroundColor = kBackgroundGray;
-    
+    //设置Item颜色
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:232/255.0 green:136/255.0 blue:145/255.0 alpha:1];
 }
 /*
 #pragma mark - Navigation
